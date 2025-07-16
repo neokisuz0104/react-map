@@ -499,7 +499,7 @@ const MapView: React.FC = () => {
                 <b>Code:</b> ${props.dcode}<br/>
             </div>
         `
-        } if (layer == "bma_cctv") {
+        } else if (layer == "bma_cctv") {
             content = `
             <div style="font-size: 12px;">
                 <b>ID:</b> ${props.ID}<br/>
@@ -524,6 +524,88 @@ const MapView: React.FC = () => {
                 <b>longitude:</b> ${props.longitude}<br/>
             </div>
         `
+        } else if (layer == "air4thai") {
+            let AQILast: any = props.AQILast
+            content = `
+              <div style="font-family: sans-serif; font-size: 12px; line-height: 1.4;">
+                <strong style="font-size: 14px;">รายงานสภาพอากาศ</strong>
+                <table style="border-collapse: collapse; margin-top: 8px;">
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">ID:</td>
+                    <td style="padding: 4px 8px;">${props.stationID}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Type:</td>
+                    <td style="padding: 4px 8px;">${props.stationType}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Name:</td>
+                    <td style="padding: 4px 8px;">${props.nameTH}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Area:</td>
+                    <td style="padding: 4px 8px;">${props.areaTH}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Latitude:</td>
+                    <td style="padding: 4px 8px;">${props.lat}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Longitude:</td>
+                    <td style="padding: 4px 8px;">${props.long}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">วันที่:</td>
+                    <td style="padding: 4px 8px;">${AQILast.date}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">เวลา:</td>
+                    <td style="padding: 4px 8px;">${AQILast.time}</td>
+                  </tr>
+                </table>
+              </div>
+            `;
+        } else if (layer == "air4thai") {
+            let AQILast: any = props.AQILast
+            content = `
+              <div style="font-family: sans-serif; font-size: 12px; line-height: 1.4;">
+                <strong style="font-size: 14px;">รายงานสภาพอากาศ</strong>
+                <table style="border-collapse: collapse; margin-top: 8px;">
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">ID:</td>
+                    <td style="padding: 4px 8px;">${props.stationID}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Type:</td>
+                    <td style="padding: 4px 8px;">${props.stationType}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Name:</td>
+                    <td style="padding: 4px 8px;">${props.nameTH}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Area:</td>
+                    <td style="padding: 4px 8px;">${props.areaTH}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Latitude:</td>
+                    <td style="padding: 4px 8px;">${props.lat}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">Longitude:</td>
+                    <td style="padding: 4px 8px;">${props.long}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">วันที่:</td>
+                    <td style="padding: 4px 8px;">${AQILast.date}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; font-weight: bold;">เวลา:</td>
+                    <td style="padding: 4px 8px;">${AQILast.time}</td>
+                  </tr>
+                </table>
+              </div>
+            `;
         }
         return content
     }
